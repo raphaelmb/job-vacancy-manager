@@ -1,8 +1,10 @@
-package br.com.raphaelmb.job_vacancy_manager.modules.candidate;
+package br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateRepository;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.controllers.UserOrEmailFoundException;
 
 

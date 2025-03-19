@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CreateCandidateUseCase;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 
 @RestController
