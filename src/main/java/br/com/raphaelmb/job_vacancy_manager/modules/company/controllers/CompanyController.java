@@ -1,4 +1,4 @@
-package br.com.raphaelmb.job_vacancy_manager.modules.candidate.controllers;
+package br.com.raphaelmb.job_vacancy_manager.modules.company.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
