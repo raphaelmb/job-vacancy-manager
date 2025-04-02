@@ -12,12 +12,12 @@ import br.com.raphaelmb.job_vacancy_manager.modules.company.dto.AuthCompanyDTO;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.useCases.AuthCompanyUseCase;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/company")
 public class AuthCompanyController {
     @Autowired
     private AuthCompanyUseCase authCompanyUseCase;
 
-    @PostMapping("/company")
+    @PostMapping("/auth")
     public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO) {
         try {
             var result = this.authCompanyUseCase.execute(authCompanyDTO);
