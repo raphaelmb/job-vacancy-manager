@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class SecurityCanidateFilter extends OncePerRequestFilter {
+public class SecurityCandidateFilter extends OncePerRequestFilter {
     @Autowired
     private JWTCandidateProvider jwtCandidateProvider;
 
@@ -30,7 +30,6 @@ public class SecurityCanidateFilter extends OncePerRequestFilter {
         if (request.getRequestURI().startsWith("/candidate")) {
             if (header != null) {
             var token = this.jwtCandidateProvider.validateToken(header);
-
                 if (token == null) {
                     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     return;
@@ -43,7 +42,6 @@ public class SecurityCanidateFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }
-
         filterChain.doFilter(request, response);
     }
     

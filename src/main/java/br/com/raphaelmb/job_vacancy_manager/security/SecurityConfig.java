@@ -17,7 +17,7 @@ public class SecurityConfig {
     private SecurityFilter securityFilter;
 
     @Autowired
-    private SecurityCanidateFilter securityCanidateFilter;
+    private SecurityCandidateFilter securityCandidateFilter;
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -30,7 +30,7 @@ public class SecurityConfig {
                 auth.anyRequest().authenticated();
             })
             .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
-            .addFilterBefore(securityCanidateFilter, BasicAuthenticationFilter.class);
+            .addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class);
         return http.build();
     }
 
