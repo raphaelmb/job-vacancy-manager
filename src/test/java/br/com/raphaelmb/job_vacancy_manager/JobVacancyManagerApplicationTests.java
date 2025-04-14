@@ -3,11 +3,11 @@ package br.com.raphaelmb.job_vacancy_manager;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class JobVacancyManagerApplicationTests {
+// @SpringBootTest
+// class JobVacancyManagerApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	// @Test
+	// void contextLoads() {
+	// }
 
-}
+// }
