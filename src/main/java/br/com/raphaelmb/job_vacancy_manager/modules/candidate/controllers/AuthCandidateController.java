@@ -12,12 +12,12 @@ import br.com.raphaelmb.job_vacancy_manager.modules.candidate.dto.AuthCandidateR
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases.AuthCandidateUseCase;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/candidate")
 public class AuthCandidateController {
     @Autowired
     private AuthCandidateUseCase authCandidateUseCase;
 
-    @PostMapping("/candidate")
+    @PostMapping("/auth")
     public ResponseEntity<Object> auth(@RequestBody AuthCandidateRequestDTO authCandidateRequestDTO) {
         try {
             var token = this.authCandidateUseCase.execute(authCandidateRequestDTO);

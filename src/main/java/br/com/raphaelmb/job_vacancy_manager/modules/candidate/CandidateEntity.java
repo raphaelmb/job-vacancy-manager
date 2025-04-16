@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,17 +23,23 @@ public class CandidateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Schema(example = "dev", requiredMode = RequiredMode.REQUIRED, description = "Candidate's name")
     private String name;
 
     @Pattern(regexp = "\\S+", message = "The field [username] should not have spaces")
+    @Schema(example = "javadev", requiredMode = RequiredMode.REQUIRED, description = "Candidate's username")
     private String username;
 
     @Email(message = "The field [email] should contain a valid email")
+    @Schema(example = "dev@example.com")
     private String email;
 
     @Length(min = 10, max = 100, message = "The field [password] should have a length between 10 and 100 characters")
+    @Schema(example = "admin@1234", minLength = 10, maxLength = 100, requiredMode = RequiredMode.REQUIRED, description = "Candidate's password")
     private String password;
 
+    @Schema(example = "Java developer", description = "Candidate's description")
     private String description;
 
     private String curriculum;
