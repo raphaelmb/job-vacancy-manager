@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.controllers.JobEntity;
+import br.com.raphaelmb.job_vacancy_manager.modules.company.entities.JobEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
