@@ -1,7 +1,5 @@
 package br.com.raphaelmb.job_vacancy_manager.modules.company.controllers;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.UUID;
 
 import org.junit.Before;
@@ -20,9 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
-import br.com.raphaelmb.job_vacancy_manager.exceptions.CompanyNotFoundException;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.dto.CreateJobDTO;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.entities.CompanyEntity;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.repositories.CompanyRepository;
@@ -65,28 +61,27 @@ public class CreateJobControllerTest {
             .level("LEVEL_TEST")
             .build();
 
-        var result = mvc.perform(MockMvcRequestBuilders.post("/company/job/")
+        mvc.perform(MockMvcRequestBuilders.post("/company/job/")
             .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtils.objectToJSON(createJobDTO))
             .header("Authorization", TestUtils.generateToken(company.getId(), "job_vacancy"))
             )
             .andExpect(MockMvcResultMatchers.status().isCreated());
-
-        System.out.println(result);
     }
 
     @Test
-    public void should_not_be_able_to_create_a_new_job_without_company() throws Exception {
+    public void should_not_be_able_to_create_a_new_job_with_nonexistent_company() throws Exception {
+        var nonexistentCompanyId = UUID.randomUUID();
         var createJobDTO = CreateJobDTO.builder()
                 .benefits("BENEFITS_TEST")
                 .descripton("DESCRIPTION_TEST") 
                 .level("LEVEL_TEST")
                 .build();
 
-        mvc.perform(MockMvcRequestBuilders.post("/company/job/")
+         mvc.perform(MockMvcRequestBuilders.post("/company/job/")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtils.objectToJSON(createJobDTO))
-                .header("Authorization", TestUtils.generateToken(UUID.randomUUID(), "job_vacancy")))
+                .header("Authorization", TestUtils.generateToken(nonexistentCompanyId, "job_vacancy")))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 

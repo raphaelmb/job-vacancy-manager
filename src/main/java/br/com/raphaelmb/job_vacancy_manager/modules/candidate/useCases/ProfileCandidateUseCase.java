@@ -3,9 +3,9 @@ package br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import br.com.raphaelmb.job_vacancy_manager.exceptions.UserNotFoundException;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateRepository;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.dto.CandidateProfileResponseDTO;
 
@@ -16,7 +16,7 @@ public class ProfileCandidateUseCase {
 
     public CandidateProfileResponseDTO execute(UUID candidateId) {
         var candidate = this.candidateRepository.findById(candidateId).orElseThrow(() -> {
-                throw new UsernameNotFoundException("User not found");
+                throw new UserNotFoundException();
             });
         
         var canidateDTO = CandidateProfileResponseDTO.builder()

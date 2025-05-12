@@ -22,6 +22,7 @@ import lombok.Data;
 public class CandidateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Schema(hidden = true)
     private UUID id;
 
     @Schema(example = "dev", requiredMode = RequiredMode.REQUIRED, description = "Candidate's name")
@@ -42,13 +43,16 @@ public class CandidateEntity {
     @Schema(example = "Java developer", description = "Candidate's description")
     private String description;
 
+    @Schema(example = "curriculum", description = "Candidate's curriculum")
     private String curriculum;
 
     @Column(name = "created_at")
     @CreationTimestamp
+    @Schema(hidden = true)
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
     @CreationTimestamp
+    @Schema(hidden = true)
     private LocalDateTime updatedAt;
 }
