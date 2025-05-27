@@ -16,3 +16,33 @@ services:
       SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true
     ports:
       - 9000:9000
+  
+  prometheus:
+    container_name: job_vacancy_prometheus
+    image: prom/prometheus
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - job_vacancy_network 
+    ports:
+      - 9090:9090
+  
+  grafana:
+    container_name: job_vacancy_grafana
+    image: grafana/grafana
+    # volumes:
+      # - grafana_data:/
+    networks:
+      - job_vacancy_network
+    ports:
+      - 3000:3000
+
+
+networks:
+  job_vacancy_network:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:

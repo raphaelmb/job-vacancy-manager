@@ -1,0 +1,11 @@
+global:
+  scrape_interval: "6s"
+
+scrape_configs:
+  - job_name: "api_job_vacancy"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+          - "192.168.0.225:8080"
+        labels:
+          application: "api_job_vacancy"
