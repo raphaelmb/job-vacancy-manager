@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.raphaelmb.job_vacancy_manager.exceptions.UserNotFoundException;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateRepository;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.dto.CandidateProfileResponseDTO;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.repository.CandidateRepository;
 
 @Service
 public class ProfileCandidateUseCase {

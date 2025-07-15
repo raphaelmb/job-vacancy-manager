@@ -17,10 +17,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.raphaelmb.job_vacancy_manager.exceptions.JobNotFoundException;
 import br.com.raphaelmb.job_vacancy_manager.exceptions.UserNotFoundException;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateRepository;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity.ApplyJobEntity;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity.CandidateEntity;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.repository.ApplyJobRepository;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.repository.CandidateRepository;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.entities.JobEntity;
 import br.com.raphaelmb.job_vacancy_manager.modules.company.repositories.JobRepository;
 

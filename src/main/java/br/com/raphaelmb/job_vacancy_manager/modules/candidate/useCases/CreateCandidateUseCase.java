@@ -5,8 +5,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.raphaelmb.job_vacancy_manager.exceptions.UserOrEmailFoundException;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateRepository;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity.CandidateEntity;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.repository.CandidateRepository;
 
 
 @Service

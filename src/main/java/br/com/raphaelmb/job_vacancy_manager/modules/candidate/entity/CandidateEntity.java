@@ -1,4 +1,4 @@
-package br.com.raphaelmb.job_vacancy_manager.modules.candidate;
+package br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

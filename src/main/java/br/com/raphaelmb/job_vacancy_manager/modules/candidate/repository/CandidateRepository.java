@@ -1,9 +1,11 @@
-package br.com.raphaelmb.job_vacancy_manager.modules.candidate;
+package br.com.raphaelmb.job_vacancy_manager.modules.candidate.repository;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity.CandidateEntity;
 
 public interface CandidateRepository extends JpaRepository<CandidateEntity, UUID>{
     Optional<CandidateEntity> findByUsernameOrEmail(String username, String email);

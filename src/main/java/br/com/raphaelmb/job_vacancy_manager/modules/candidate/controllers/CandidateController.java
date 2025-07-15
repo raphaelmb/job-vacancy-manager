@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.raphaelmb.job_vacancy_manager.modules.candidate.CandidateEntity;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.dto.CandidateProfileResponseDTO;
+import br.com.raphaelmb.job_vacancy_manager.modules.candidate.entity.CandidateEntity;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases.ApplyJobCandidateUseCase;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases.CreateCandidateUseCase;
 import br.com.raphaelmb.job_vacancy_manager.modules.candidate.useCases.ListAllJobsByFilterUseCase;
