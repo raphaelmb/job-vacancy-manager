@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateJobDTO {
     @Schema(example = "Java developer", requiredMode = RequiredMode.REQUIRED)
-    private String descripton;    
+    private String description;    
 
     @Schema(example = "Gym pass", requiredMode = RequiredMode.REQUIRED)
     private String benefits;    
