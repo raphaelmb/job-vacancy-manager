@@ -57,7 +57,7 @@ public class CreateJobControllerTest {
 
         var createJobDTO = CreateJobDTO.builder()
             .benefits("BENEFITS_TEST")
-            .descripton("DESCRIPTION_TEST")
+            .description("DESCRIPTION_TEST")
             .level("LEVEL_TEST")
             .build();
 
@@ -74,7 +74,7 @@ public class CreateJobControllerTest {
         var nonexistentCompanyId = UUID.randomUUID();
         var createJobDTO = CreateJobDTO.builder()
                 .benefits("BENEFITS_TEST")
-                .descripton("DESCRIPTION_TEST") 
+                .description("DESCRIPTION_TEST") 
                 .level("LEVEL_TEST")
                 .build();
 
